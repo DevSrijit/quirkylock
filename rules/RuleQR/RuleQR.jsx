@@ -6,10 +6,9 @@ async function getQR(word){
     
     //https://goqr.me/api/
     let url = `https://api.qrserver.com/v1/create-qr-code/?data=${word}!&size=100x100`;
-    url = 'https://corsproxy.io/?' + encodeURIComponent(url);   // CORS proxy
-
     const options = {
         method: 'GET',
+        mode: 'no-cors'
     };
 
     let response = await fetch(url, options);
